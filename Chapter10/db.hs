@@ -20,7 +20,7 @@ theDatabase =
     ]
 
 filterDbDate :: [DatabaseItem] -> [UTCTime]
-filterDbDate xs = [t | x@(DbDate t) <- xs]
+filterDbDate xs = [t | (DbDate t) <- xs]
 
 filterDbDate' :: [DatabaseItem] -> [UTCTime]
 filterDbDate' xs = foldr (\x y -> filterOnlyTime x ++ y) [] xs where
