@@ -54,9 +54,7 @@ data Pair a = Pair a a deriving (Eq, Show)
 
 genPair :: Arbitrary a => Gen (Pair a)
 genPair = do
-    x <- arbitrary
-    y <- arbitrary
-    return $ Pair x y
+    x <- arbitraryIdentity
 
 instance Arbitrary a => Arbitrary (Pair a) where
     arbitrary = genPair
